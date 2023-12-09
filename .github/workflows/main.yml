@@ -1,1 +1,17 @@
-
+on:
+  push:
+    branches:
+    - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.3
+      - name: HubSpot Deploy Action
+        uses: HubSpot/hubspot-cms-deploy-action@v1.7
+        with:
+          src_dir: STI_Dev_E23
+          dest_dir: STI_Dev_E23
+          portal_id: 1967529
+          personal_access_key: CiQwZDA3ZDVlMC1hZmZkLTQxMWItOWZiMy01NTg3YTcwYmZhZWQQqYt4GIvHHCoZAAXmkYK3Ha4X7Fq6gCdu0O-7uXGnOiXo7UoDbmEx
